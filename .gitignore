@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Build & Logs
+*.log
+extract.log
+pdf_extracted_raw.txt
+
+# Environment & Credentials
+.env
+.env.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+credentials.json

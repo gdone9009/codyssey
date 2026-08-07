@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity 2.0 - Subagent Orchestrator Dashboard</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-box">
+        <i class="fa-solid fa-network-wired logo-icon"></i>
+        <div class="logo-text">
+          <h1>ANTIGRAVITY <span>2.0</span></h1>
+          <span class="subtitle">Subagent Cluster Orchestrator & Live Monitor</span>
+        </div>
+      </div>
+      <div class="status-badge pulse">
+        <span class="dot"></span> CLUSTER ACTIVE
+      </div>
+    </div>
+
+    <div class="header-center metrics-strip">
+      <div class="metric-item">
+        <span class="label"><i class="fa-solid fa-robot"></i> active agents</span>
+        <span class="value" id="metric-agents-count">4 Worker Nodes</span>
+      </div>
+      <div class="metric-item">
+        <span class="label"><i class="fa-solid fa-microchip"></i> cpu load</span>
+        <span class="value highlight-blue" id="metric-cpu">18%</span>
+      </div>
+      <div class="metric-item">
+        <span class="label"><i class="fa-solid fa-bolt"></i> throughput</span>
+        <span class="value highlight-green" id="metric-throughput">1.48k tok/s</span>
+      </div>
+      <div class="metric-item">
+        <span class="label"><i class="fa-solid fa-brain"></i> primary model</span>
+        <span class="value highlight-purple">Gemini 3.6 Flash</span>
+      </div>
+    </div>
+
+    <div class="header-right actions">
+      <button class="btn btn-primary" onclick="openDispatchModal()">
+        <i class="fa-solid fa-plus"></i> Dispatch Subagent
+      </button>
+      <button class="btn btn-secondary" onclick="triggerWorkload()">
+        <i class="fa-solid fa-play"></i> Run Heavy Audit
+      </button>
+      <button class="btn btn-outline" onclick="exportTelemetry()">
+        <i class="fa-solid fa-download"></i> Export Telemetry
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="dashboard-grid">
+
+    <!-- Top Banner: Topology Diagram & Multi-Agent Architecture -->
+    <section class="card glass topology-card">
+      <div class="card-header">
+        <h2><i class="fa-solid fa-diagram-project"></i> Multi-Agent Topology & Communication Network</h2>
+        <span class="badge badge-tech"><i class="fa-solid fa-share-nodes"></i> Dynamic Subagent Mesh</span>
+      </div>
+      <div class="topology-container">
+        <div class="node node-master">
+          <div class="node-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="node-info">
+            <h3>Master Orchestrator</h3>
+            <p>Role: Global Task Allocator & Synthesizer</p>
+            <span class="pill pill-purple">Gemini 3.6 Flash (High)</span>
+          </div>
+        </div>
+
+        <div class="connecting-lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+        <div class="subagents-row" id="subagents-topology-nodes">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Middle Row: Subagent Cards Grid -->
+    <section class="card glass subagents-card">
+      <div class="card-header">
+        <h2><i class="fa-solid fa-cubes-stacked"></i> Subagent Worker Pool Status</h2>
+        <div class="filter-pills">
+          <span class="pill active" onclick="filterSubagents('ALL')">All (4)</span>
+          <span class="pill" onclick="filterSubagents('RUNNING')">Running</span>
+          <span class="pill" onclick="filterSubagents('COMPLETED')">Completed</span>
+        </div>
+      </div>
+      <div class="subagent-grid" id="subagent-cards-container">
+        <!-- Subagent cards dynamically rendered here -->
+      </div>
+    </section>
+
+    <!-- Bottom Left: Live Event & Subagent Log Terminal -->
+    <section class="card glass terminal-card">
+      <div class="card-header">
+        <h2><i class="fa-solid fa-terminal"></i> Live Subagent Activity Stream & Logs</h2>
+        <div class="terminal-controls">
+          <input type="text" id="log-search" placeholder="Search logs..." oninput="renderLogs()">
+          <span class="pill-btn active" onclick="setLogFilter('ALL')">ALL</span>
+          <span class="pill-btn" onclick="setLogFilter('AGENT_MSG')">AGENT MSG</span>
+          <span class="pill-btn" onclick="setLogFilter('SUCCESS')">SUCCESS</span>
+          <span class="pill-btn" onclick="setLogFilter('INFO')">INFO</span>
+          <button class="icon-btn" onclick="clearLogs()" title="Clear Terminal"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminal-logs">
+        <!-- Live logs inserted here -->
+      </div>
+    </section>
+
+    <!-- Bottom Right: Real-time Telemetry & Resource Charts -->
+    <section class="card glass analytics-card">
+      <div class="card-header">
+        <h2><i class="fa-solid fa-chart-line"></i> Subagent Resource & Throughput Telemetry</h2>
+        <span class="badge badge-live"><i class="fa-solid fa-circle"></i> Live Sync (2.5s)</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="resourceChart"></canvas>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for Dispatching New Subagent -->
+  <div class="modal-overlay" id="dispatch-modal">
+    <div class="modal-content glass">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-robot"></i> Dispatch New Custom Subagent</h3>
+        <button class="close-btn" onclick="closeDispatchModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Subagent Name</label>
+          <input type="text" id="agent-name-input" placeholder="e.g. Vulnerability Auditor Subagent">
+        </div>
+        <div class="form-group">
+          <label>Specialized Role</label>
+          <input type="text" id="agent-role-input" placeholder="e.g. Deep AST Inspection & Refactoring">
+        </div>
+        <div class="form-group">
+          <label>Initial Workload Prompt</label>
+          <textarea id="agent-task-input" rows="3" placeholder="Describe the task for this subagent..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeDispatchModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="submitDispatchSubagent()">Launch Subagent</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

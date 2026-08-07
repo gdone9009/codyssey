@@ -1,0 +1,15 @@
+AI 기반 Git 커밋 \u0026 PR 자동 생성기 개발.pdf -> 1f-gsBEUor9kFglARMNgeq47elyvwopmN
+FastAPI 기반 CRUD 웹 서비스 구축.pdf -> 1vWKLvYdEUPxBHM31SJkX_Ep0RudwaqyJ
+Mini Git 구축.pdf -> 1u7ism2bLghiv5moEFZ-SA_9QPPkYZ3eV
+Mini Redis 구축.pdf -> 1sia6W-_0C37MMPSSsTndOLD58IzBs144
+React 핵심 개념 마스터- SPA 서비스 구현.pdf -> 1_IWfZntnz3TfijoPVN6OIpe2AYtdcQ0G
+SQL로 만드는 나만의 데이터베이스.pdf -> 1L8zqfKTXAeNPwuigNS4-5vUuGQBvDbbx
+리눅스 프로세스 및 시스템 리소스 트러블슈팅.pdf -> 1mtOcQEv4ANl5ooQvwItM5Dapt_H9DeeS
+시스템 관제 자동화 스크립트 개발.pdf -> 13b-laJfxSry3bx8Q2F-zhGuY3vWv-5Sh
+실전 Git 협업 워크플로우.pdf -> 1m0qj7QKtPU8QNojJ7a_MhHPiJ5ZlFUws
+웹 기반 AI 챗봇 서비스 개발 프로젝트.pdf -> 1evGZohCa4yA0K_0OoVOYT48NTHulomcj
+웹 기반 AI 챗봇 서비스 고도화 프로젝트.pdf -> 1h6l2xYUbBiJL_hbE3OmzYbCmW6VWGWpL
+웹 기초 완성, 나만의 포트폴리오 구축.pdf -> 1anmX50c3aWaDynuM6mFXnaPdyU7NgzqN
+인증과 연관관계로 완성하는 FastAPI 웹 서비스.pdf -> 1lHcJFoi6HZWlHDEjzL5Br_bzBTUI3pSt
+클라우드 환경에서 웹 서비스 인프라 구축.pdf -> 1-DFxPR-qQmzGrw3V8ObtujHNiavFceEw
+파일 기반 가계부 콘솔 프로그램 만들기.pdf -> 1Q2t0oo3ACFl90E0sW04FQp3UQT6y2oL_

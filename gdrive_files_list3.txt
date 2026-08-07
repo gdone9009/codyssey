@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "/Users/gdone/dev/codyssey/gdrive_service.py", line 63, in list_gdrive_files
+    service = get_gdrive_service()
+  File "/Users/gdone/dev/codyssey/gdrive_service.py", line 48, in get_gdrive_service
+    creds = flow.run_local_server(port=8080, prompt='consent')
+  File "/Users/gdone/Library/Python/3.9/lib/python/site-packages/google_auth_oauthlib/flow.py", line 437, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/wsgiref/simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/wsgiref/simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use

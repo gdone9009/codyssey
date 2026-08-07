@@ -1,0 +1,63 @@
+{
+  "system": "Antigravity Multi-Agent Orchestrator 2.0",
+  "version": "2.4.0",
+  "master_agent": {
+    "name": "Master Orchestrator",
+    "model": "Gemini 3.6 Flash (High)",
+    "role": "Global Task Planning & Delegate Distribution"
+  },
+  "subagents": [
+    {
+      "id": "subagent-01",
+      "name": "Code Auditor Agent",
+      "type": "code_auditor",
+      "role": "Static Code Analysis & AST Parsing",
+      "model": "Gemini 3.6 Flash",
+      "status": "RUNNING",
+      "progress": 78,
+      "task": "Scanning /dev/codyssey AST tree & dependencies",
+      "cpu": "14%",
+      "memory": "142 MB",
+      "logs_count": 42
+    },
+    {
+      "id": "subagent-02",
+      "name": "Security Audit Agent",
+      "type": "sec_audit",
+      "role": "Vulnerability & Credentials Verification",
+      "model": "Gemini 3.6 Flash",
+      "status": "RUNNING",
+      "progress": 62,
+      "task": "Auditing open ports, env secrets, and SQL injections",
+      "cpu": "22%",
+      "memory": "188 MB",
+      "logs_count": 31
+    },
+    {
+      "id": "subagent-03",
+      "name": "Performance Profiler",
+      "type": "perf_profiler",
+      "role": "Event Loop & IO Bottleneck Optimization",
+      "model": "Gemini 3.6 Flash",
+      "status": "COMPLETED",
+      "progress": 100,
+      "task": "Benchmarking async throughput and latency",
+      "cpu": "2%",
+      "memory": "94 MB",
+      "logs_count": 55
+    },
+    {
+      "id": "subagent-04",
+      "name": "Test Generator Agent",
+      "type": "test_synth",
+      "role": "Automated Unit & Integration Test Generation",
+      "model": "Gemini 3.6 Flash",
+      "status": "IN_PROGRESS",
+      "progress": 45,
+      "task": "Generating Jest test suites for backend modules",
+      "cpu": "18%",
+      "memory": "165 MB",
+      "logs_count": 19
+    }
+  ]
+}

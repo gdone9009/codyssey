@@ -1,0 +1,13 @@
+{
+  "name": "subagent-orchestrator-dashboard",
+  "version": "1.0.0",
+  "description": "Antigravity 2.0 Subagent Orchestrator & Live Monitoring Dashboard",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "dev": "npx serve -l 3000 ."
+  },
+  "keywords": ["antigravity", "subagent", "orchestrator", "dashboard", "multi-agent"],
+  "author": "Antigravity AI",
+  "license": "MIT"
+}

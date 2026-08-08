@@ -17,7 +17,9 @@
 | 07 | [python-budget-app](./python-budget-app) | 💰 파일 기반 가계부 콘솔 프로그램 | Python, OOP, Test | ❇️ Completed | 52b943ac-f000 | 7c08987 | Passed |
 | 08 | [python-quiz-game](./python-quiz-game) | 🎯 CLI 퀴즈 게임 프로그램 | Python, JSON, CLI | ❇️ Completed | 52b943ac-f000 | 845bf6d | Passed |
 | 09 | [sql-db](./sql-db) | 📊 도서 관리 시스템 SQL 데이터베이스 구축 | SQLite, SQL Query | ❇️ Completed | 0d4021e9-92f8 | 0df8c76 | Passed |
-| 10 | [vanilla-js-portfolio](./vanilla-js-portfolio) | 🛡️ 단방향 상태 관리 기반 반응형 포트폴리오 | JS, HTML/CSS Web | ❇️ Completed | - | ef053c0 | Passed |
+| 10 | [vanilla-js-portfolio](./vanilla-js-portfolio) | 🛡️ 단방향 상태 관리 기반 반응형 포트폴리오 | JS, HTML/CSS Web | ❇️ Completed | - | c412683 | Passed |
+| 11 | [blog](./blog) | 📝 10개 미션 딥다이브 기술 블로그 및 CMS | Jekyll, Giscus, CMS | ❇️ Completed | - | 7fb1266 | Deployed |
+| 12 | [Bigdata-Analysis-Engineer](./Bigdata-Analysis-Engineer) | 🎓 빅데이터 분석기사 필기 CBT 모의고사 웹 앱 | HTML/JS, CBT, JSON | ❇️ Completed | - | ef8c950 | Deployed |
 
 ---
 
